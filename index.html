@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Calculador de Emissão CO² 🌿</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__inner">
+        <h1 class="header__title">🌿 Calculador de Emissão CO²</h1>
+        <p class="header__subtitle">
+          Calcule estimativas de emissão de CO² com base na rota, transporte e
+          distância.
+        </p>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="calculator">
+        <form
+          id="calculator-form"
+          class="calculator__form"
+          action="#"
+          method="post"
+          aria-labelledby="calculator-title"
+        >
+          <fieldset class="calculator__fieldset">
+            <legend id="calculator-title" class="calculator__legend">
+              Dados da Viagem
+            </legend>
+
+            <label for="origin" class="calculator__label">Origem</label>
+            <input
+              id="origin"
+              class="calculator__input"
+              name="origin"
+              list="cities-list"
+              type="text"
+              placeholder="Cidade de partida"
+              autocomplete="on"
+            />
+
+            <label for="destination" class="calculator__label">Destino</label>
+            <input
+              id="destination"
+              class="calculator__input"
+              name="destination"
+              list="cities-list"
+              type="text"
+              placeholder="Cidade de destino"
+              autocomplete="on"
+            />
+
+            <datalist id="cities-list">
+              <!-- Populado dinamicamente via JS -->
+            </datalist>
+
+            <label for="distance" class="calculator__label"
+              >Distância (km)</label
+            >
+            <input
+              id="distance"
+              class="calculator__input calculator__input--readonly"
+              name="distance"
+              type="number"
+              readonly
+            />
+
+            <p class="calculator__helper">
+              A distância será preenchida automaticamente
+            </p>
+
+            <div class="calculator__manual">
+              <input
+                id="distance-manual"
+                class="calculator__checkbox"
+                name="distance-manual"
+                type="checkbox"
+              />
+              <label
+                for="distance-manual"
+                class="calculator__label calculator__label--inline"
+                >Inserir distância manualmente</label
+              >
+            </div>
+          </fieldset>
+
+          <fieldset class="calculator__fieldset">
+            <legend class="calculator__legend">Modo de Transporte</legend>
+
+            <div
+              class="calculator__transport-grid"
+              role="radiogroup"
+              aria-label="Modo de transporte"
+            >
+              <label
+                class="calculator__transport-option"
+                for="transport-bicycle"
+              >
+                <input
+                  id="transport-bicycle"
+                  class="calculator__transport-input"
+                  type="radio"
+                  name="transport"
+                  value="bicycle"
+                />
+                <span class="calculator__transport-emoji">🚲</span>
+                <span class="calculator__transport-text">Bicicleta</span>
+              </label>
+
+              <label class="calculator__transport-option" for="transport-car">
+                <input
+                  id="transport-car"
+                  class="calculator__transport-input"
+                  type="radio"
+                  name="transport"
+                  value="car"
+                  checked
+                />
+                <span class="calculator__transport-emoji">🚗</span>
+                <span class="calculator__transport-text">Carro</span>
+              </label>
+
+              <label class="calculator__transport-option" for="transport-bus">
+                <input
+                  id="transport-bus"
+                  class="calculator__transport-input"
+                  type="radio"
+                  name="transport"
+                  value="bus"
+                />
+                <span class="calculator__transport-emoji">🚌</span>
+                <span class="calculator__transport-text">Ônibus</span>
+              </label>
+
+              <label class="calculator__transport-option" for="transport-truck">
+                <input
+                  id="transport-truck"
+                  class="calculator__transport-input"
+                  type="radio"
+                  name="transport"
+                  value="truck"
+                />
+                <span class="calculator__transport-emoji">🚚</span>
+                <span class="calculator__transport-text">Caminhão</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <div class="calculator__actions">
+            <button type="submit" class="calculator__submit">
+              Calculator Emissão
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <section id="results" class="results hidden" aria-hidden="true">
+        <div id="results-content" class="results__content"></div>
+      </section>
+
+      <section id="comparison" class="comparison hidden" aria-hidden="true">
+        <div id="comparison-content" class="comparison__content"></div>
+      </section>
+
+      <section
+        id="carbon-credits"
+        class="carbon-credits hidden"
+        aria-hidden="true"
+      >
+        <div id="carbon-credits-content" class="carbon-credits__content"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__inner">
+        <p class="footer__credits">
+          Desenvolvido com amor para a DIO | Projeto Hithub Copilot do Vagner
+          Nerves
+        </p>
+      </div>
+    </footer>
+
+    <!-- Scripts na ordem solicitada -->
+    <script src="js/routes-data.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/calculator.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
