@@ -3,8 +3,6 @@
   <h1 align="center">Project Calculator Ecotrip</h1>
   
   This project was developed with GitHub Copilot using commands from the DIO course **"GitHub Copilot - Código na Prática"**. It estimates CO₂ emissions for trips based on route distances and transportation modes. Use this small web demo to explore carbon footprint calculations and basic UI integrations.
-  
-  🚧 Project under construction 🚧
 </p>
 
 ## 🧭 Table of contents
