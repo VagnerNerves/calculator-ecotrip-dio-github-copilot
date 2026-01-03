@@ -1,5 +1,4 @@
 <p align="center">
-  <img width="200px" alt="Project Title Logo" title="Project Title Logo" src="logo.svg" />
   
   <h1 align="center">Project Calculator Ecotrip</h1>
   
